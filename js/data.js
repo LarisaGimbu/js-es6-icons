@@ -113,6 +113,14 @@ const fontIcons = [
 	}
 ];
 
+//creo un array per animali vegetali e user
+const animals = fontIcons.filter((icon) => icon.type === 'animal');
+const vegetables = fontIcons.filter((icon) => icon.type === 'vegetable');
+const users = fontIcons.filter((icon) => icon.type === 'user');
+
+
+let select = document.getElementsByClassName('form-select').value;
+ console.log(select);
 
 //Partendo dalla struttura dati fornita, visualizzare in pagina un box per ogni icona, in cui è presente il nome dell’icona e l’icona stessa.
 
@@ -135,7 +143,28 @@ const boxTemplate= (icon) =>{
 
 }
 
-for(let icon of fontIcons){
+let arr = [];
+
+// switch(select){
+// 	case '1': 
+// 		arr = [...animals];
+// 		break;
+// 	case '2': 
+// 		arr = [...vegetables];
+// 		break;
+// 	case '3': 
+// 		arr = [...users];
+// 		break;
+// 	default:
+// 		arr = [...fontIcons];
+
+// }
+
+
+
+console.log(arr);
+
+for(let icon of arr){
 	document.getElementById('box-container').innerHTML += boxTemplate(icon);
 }
 
