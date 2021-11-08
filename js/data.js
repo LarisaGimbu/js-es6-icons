@@ -145,20 +145,24 @@ const boxTemplate= (icon) =>{
 
 let arr = [];
 
-switch(types){
-	case '1': 
-		arr = [...animals];
-		break;
-	case '2': 
-		arr = [...vegetables];
-		break;
-	case '3': 
-		arr = [...users];
-		break;
-	default:
-		arr = [...fontIcons];
+types.addEventListener('change', (value) =>{
+	switch(value){
+		case '1': 
+			arr = [...animals];
+			break;
+		case '2': 
+			arr = [...vegetables];
+			break;
+		case '3': 
+			arr = [...users];
+			break;
+		default:
+			arr = [...fontIcons];
+	
+	}
+})
 
-}
+
 
 
 
