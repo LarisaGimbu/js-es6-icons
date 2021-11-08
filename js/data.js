@@ -120,7 +120,7 @@ const users = fontIcons.filter((icon) => icon.type === 'user');
 
 
 let types = document.getElementById('types').value;
- console.log(types);
+
 
 //Partendo dalla struttura dati fornita, visualizzare in pagina un box per ogni icona, in cui è presente il nome dell’icona e l’icona stessa.
 
@@ -145,26 +145,20 @@ const boxTemplate= (icon) =>{
 
 let arr = [];
 
-types.addEventListener('change', (value) =>{
-	switch(value){
-		case '1': 
-			arr = [...animals];
-			break;
-		case '2': 
-			arr = [...vegetables];
-			break;
-		case '3': 
-			arr = [...users];
-			break;
-		default:
-			arr = [...fontIcons];
-	
-	}
-})
+switch(types){
+	case '1': 
+		arr = [...animals];
+		break;
+	case '2': 
+		arr = [...vegetables];
+		break;
+	case '3': 
+		arr = [...users];
+		break;
+	default:
+		arr = [...fontIcons];
 
-
-
-
+}
 
 console.log(arr);
 
