@@ -1,4 +1,4 @@
-[
+const fontIcons = [
 	{
 		name: 'cat',
 		prefix: 'fa-',
@@ -112,3 +112,33 @@
 		color: 'blue'
 	}
 ];
+
+
+//Partendo dalla struttura dati fornita, visualizzare in pagina un box per ogni icona, in cui è presente il nome dell’icona e l’icona stessa.
+
+
+const boxTemplate= (icon) =>{
+	
+	const {name, prefix, family, color} = icon;
+
+	return`
+
+		<div class="box d-flex justify-content-center align-items-center flex-column mt-3 me-3">
+			<div class="img">
+			<i class="${family} ${prefix}${name} ${color}"></i>
+			</div>
+			<span class="description">${name}</span> 
+		</div>
+
+
+	`
+
+}
+
+for(let icon of fontIcons){
+	document.getElementById('box-container').innerHTML += boxTemplate(icon);
+}
+
+
+
+
