@@ -1,0 +1,22 @@
+.title{
+  color: #29B1DD;
+  font-weight: bold;
+}
+
+nav{
+  background-color: #29B1DD;
+  height: 50px;
+  color: white;
+  text-transform: uppercase;
+}
+
+nav select{
+  width: 100px !important;
+  height: 20px;
+  padding: 0 !important;
+  font-size: 10px !important;
+}
+
+nav select option{
+  font-size: 10px;
+}
