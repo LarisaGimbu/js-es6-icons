@@ -1,3 +1,7 @@
+body{
+  background-color: #DDDDDD;
+}
+
 .title{
   color: #29B1DD;
   font-weight: bold;
@@ -19,4 +23,26 @@ nav select{
 
 nav select option{
   font-size: 10px;
+}
+
+.box{
+  width: calc(100% / 6);
+  height: 80px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 1px 1px 1px gray;
+}
+
+.orange{
+  color: orange;
+}
+
+.box .img i{
+  padding-top: 10px;
+  font-size: 25px;
+}
+
+.box p{
+  text-transform: uppercase;
+  font-size: 12px;
 }
