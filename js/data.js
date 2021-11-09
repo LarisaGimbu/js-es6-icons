@@ -117,11 +117,11 @@ const fontIcons = [
 //Partendo dalla struttura dati fornita, visualizzare in pagina un box per ogni icona, in cui è presente il nome dell’icona e l’icona stessa.
 
 
-const boxTemplate= (icon) =>{
+const boxTemplate = (icon) =>{
 	
 	const {name, prefix, family, color} = icon;
 
-	return`
+	const boxHtml =`
 
 		<div class="box d-flex justify-content-center align-items-center flex-column mt-3 me-3">
 			<div class="img">
@@ -129,19 +129,26 @@ const boxTemplate= (icon) =>{
 			</div>
 			<span class="description">${name}</span> 
 		</div>
-
-
 	`
+	return boxHtml;
 
 }
 
-const createBox = (array) =>{
-	for(let icon of array){
+const createBox = (arrayToPrint) =>{
+	// for(let icon of arrayToPrint){
 
-		document.getElementById('box-container').innerHTML += boxTemplate(icon);
-	}
+	// 	document.getElementById('box-container').innerHTML += boxTemplate(icon);
+	// }
+
+	container.innerHTML = '';
+	arrayToPrint.forEach( (icon) =>{
+
+		container.innerHTML += boxTemplate(icon);
+	})
 }
 
+//********RENDER PAGE
+const container = document.getElementById('box-container');
 
 let types = document.getElementById('types');
 let arr = [...fontIcons];
@@ -166,29 +173,8 @@ types.addEventListener('change', function(){
 	}
 
 	createBox(arr)
-
-
-
 })
 
-
-
-// switch(types.value){
-// 	case '1': 
-// 		arr = [...animals];
-// 		break;
-// 	case '2': 
-// 		arr = [...vegetables];
-// 		break;
-// 	case '3': 
-// 		arr = [...users];
-// 		break;
-// 	default:
-// 		arr = [...fontIcons];
-
-// }
-
-console.log(arr);
 
 
 
